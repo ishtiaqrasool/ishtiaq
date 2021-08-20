@@ -1,0 +1,93 @@
+<html>
+
+<style>
+    body {
+        background-color: powderblue;
+    }
+</style>
+
+<body>
+
+    <Title>Image Processing Lab Excercises</Title>
+    <h1> Image Processing Lab3: Image Basics</h1>
+
+    <h2>Practice</h2>
+
+    <p>
+        Exercise 1 (Image representation)<br>
+        Load the grayscale image, cameraman.tif. Show it as a 3D surface. Use the mouse to rotate the plot and try to
+        visualize the objects. Show top-left 5x5 pixels as a matrix.
+        <br><br>
+
+        Exercise 2 (2D and Linear Image Coordinates)<br>
+        Load the grayscale image, cameraman.tif. Display values of the first five pixels in the middle row using 2D and
+        linear coordinates. (Note: They should be the same in both cases.)
+        <br><br>
+
+        Exercise 3 (Size of image data and file)<br>
+        Load the grayscale image, cameraman.tif. Assuming that it uses 8-bits per pixel, what will be the total size of
+        data in MegaBytes. Now save this image as a JPEG file on the hard disk and check the filesize. Display both
+        sizes side by side. Why are they different (Ans: Data stored on disk is encoded and compressed; hence the
+        file-size is smaller.)?
+        <br><br>
+
+        Exercise 4 (Spatial resolution and interpolation methods)<br>
+        Load the grayscale image, cameraman.tif. Shrink the spatial resolution to 64x64 using MATLAB's built-in
+        function. Then zoom to the original resolution. Show the original image and the final result side by side. Use
+        nearest neighbor approach both for shrinking and zooming.
+        <br><br>
+
+        Exercise 5 (Gray level resolution)<br>
+        Load the grayscale image, cameraman.tif. This image is quantized using 8 bits. Quantize it using 4 bits, 2 bits,
+        and 1 bit and show all results side by side. Stretch each result in [0, 255] range for viewing. (Note: If you
+        divide integer data by 2 and round down the result, you reduce the quantization by one bit.)
+        <br><br>
+
+        Exercise 6 (Noise reduction using averaging)<br>
+        Load the grayscale image, cameraman.tif. Generate two new images, one with salt-and-pepper noise and the other
+        with Gaussian noise added to the original image. Display all images side by side.
+        <br><br>
+
+        Exercise 7 (Subtraction for visualizing the difference in images)<br>
+        Read the grayscale image, cameraman.tif. Save it as a JPEG file using imwrite() command at quality=10 and load
+        this lower quality version again using imread() command. Call these two images as B and C. Calculate their
+        difference D = B – C. Stretch D to [0, 255] range. Display B, C, and D side by side in a row.
+        <br><br>
+
+        Exercise 8 (RGB channels in a color image)<br>
+        Load a color image fabric.png. Split it into R, G, B channels. Display the color image and all channels as
+        separate grayscale images side by side.
+        <br><br>
+    </p>
+
+    <h2>Exercises to be marked</h2>
+    <p>
+        Exercise 9 (Spatial resolution and interpolation methods)<br>
+        Repeat Ex2 using nearest neighbor, bilinear interpolation, and bicubic interpolation methods. Show the results
+        and the original side by side.
+        <br><br>
+
+        Exercise 10 (Multiplication for masking)<br>
+        Read the grayscale image, cameraman.tif. Generate a new image of the same size in which a rectangular section of
+        100x100 pixels approximately near the center has all values equal to one, and all other pixels have zero value.
+        Multiply this mask with the original image. display the original image, the mask, and the result side by side.
+        (Note: you can make the 100x100 mask at any location of your choice, near the center).
+        <br><br>
+
+        Exercise 11 (RGB channels in a color image)<br>
+        Load a color image. Split it into R, G, B channels. Make a new image in which R and G are swapped. Display the
+        original and the new image side by side.
+        <br><br>
+
+        Exercise 12 (Noise reduction using averaging)<br>
+        Load the grayscale image, cameraman.tif. Generate four new images with salt-and-pepper noise added to the
+        original image. Take the average of these four, and check if averaging reduced the noise. Repeat the experiment
+        using 10 and 20 noisy images and observe the results.
+        (Note: Convert image data from uint8 to double before applying any arithmetic operations.)
+        (Note: You can calculate the average in a loop. Average of A and B is A/2+B/2; Average of A, B, C is
+        A/3+B/3+C/3; and …)
+    </p>
+
+</body>
+
+</html>

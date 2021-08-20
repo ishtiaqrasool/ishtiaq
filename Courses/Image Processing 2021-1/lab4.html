@@ -1,0 +1,69 @@
+<html>
+
+<style>
+    body {
+        background-color: powderblue;
+    }
+</style>
+
+<body>
+
+    <Title>Image Processing Lab Excercises</Title>
+    <h1> Image Processing Lab4: Intensity Transformations</h1>
+
+    <ul>
+        <li> Simple intensity transformation and parameter adjustment</li>
+        <li>Histogram construction</li>
+        <li>Histogram equalization</li>
+    </ul>
+
+    <p>
+        Exercise 1: Parameter tuning for Image Enhancement (Practice)<br>
+        In this exercise, we will use a simple intensity transformation to enhance an image (Fig. 3.8(a) in the book).
+        Use log transformation s = c log(1+r) (given in Eq.3.2-2). Experiment with different values of parameter c to
+        obtain the best visual enhancement possible. Can you give a reason why this value of c is good?
+        <br><br>
+
+        Exercise 2 (Marked)<br>
+        Parameter tuning is a major issue in image processing. In Ex1, we tuned the value of c. Repeat Ex1 by using
+        power-law transformation s = c.r^g (Eq.3.2-3). In this case, there are two parameters c and g to adjust.
+        Experiment with different values and find the values that give a decent result.
+        <br><br>
+
+        Exercise 3 (Histogram calculation) (Practice)<br>
+        Use MATLAB's built-in function hist to calculate the histogram of Fig. 3.8(a). Define a parameter n to describe
+        the number of bins.
+        <br><br>
+
+        Exercise 4 (Histogram calculation) (Marked)<br>
+        Write a computer program (without using the built-in hist function) for computing the histogram of Fig.
+        3.8(a). Use a parameter n to describe the number of bins. Compare your results with the built-in function used
+        in Ex3.
+        <br><br>
+
+        Exercise 5 (Histogram Equalization) (Practice)<br>
+        Apply the histogram equalization technique using the built-in function on Fig.3.8(a). Show the original image
+        and its histogram, and the enhanced image and its histogram.
+        <br><br>
+
+        Exercise 6 (Histogram Equalization) (Marked)<br>
+        Implement the histogram equalization technique without using the built-in function and apply it to Fig.3.8(a).
+        Show the following:
+        a) original image, its histogram,
+        b) enhanced image, its histogram, and the transformation curve
+        c) same as in (b) above but using built-in function (Note: imhist() can return the transformation curve)
+        Looking at the transformation curves, explain why the image seems enhanced. (Hint: Look at the slope of the
+        curve).
+        <br><br>
+
+        Exercise 7 (Optional)(Bonus)<br>
+        You can see that the transformation curve and the enhanced image by the built-in MATLAB function are different
+        from yours (Change the value of n to 100 to see it more clearly.) Can you improve your implementation such that
+        both give identical (or very similar) results?
+        <br><br>
+
+    </p>
+
+</body>
+
+</html>
