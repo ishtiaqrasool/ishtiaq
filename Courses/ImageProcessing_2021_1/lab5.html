@@ -1,23 +1,19 @@
 <html>
 
-<style>
-    body {
-        background-color: powderblue;
-    }
-</style>
+<head>
+    <title>Image Processing Labs</title>
+    <link rel="stylesheet" href="../../myCSS.css">
+</head>
 
-<Title>Image Processing Labs</Title>
-
-<table width=60% height=10% border=0>
-    <tr>
-        <td> <a href="intro.html"> Introduction </a> </td>
-        <td> <a href="lab1.html"> Lab1 </a> </td>
-        <td> <a href="lab2.html"> Lab2 </a> </td>
-        <td> <a href="lab3.html"> Lab3 </a> </td>
-        <td> <a href="lab4.html"> Lab4 </a> </td>
-        <td> <a href="lab5.html"> Lab5 </a> </td>
-    </tr>
-</table>
+<button> <a href="intro.html"> Introduction </a></button>
+<button> <a href="lab1.html"> Lab1 </a></button>
+<button> <a href="lab2.html"> Lab2 </a></button>
+<button> <a href="lab3.html"> Lab3 </a></button>
+<button> <a href="lab4.html"> Lab4 </a></button>
+<button> <a href="lab5.html"> Lab5 </a></button>
+<button> <a href="lab6.html"> Lab6 </a></button>
+<button> <a href="lab7.html"> Lab7 </a></button>
+<button> <a href="lab8.html"> Lab8 </a></button>
 
 <body>
 
@@ -34,7 +30,7 @@
     </ul>
 
     <p>
-        Exercise 1: Zero-Padding (Practice)<br>
+        <b>Exercise 1: Zero-Padding (Practice)</b><br>
         In image filtering (convolution of an image with a filter kernel), when the center of the kernel is aligned with
         a boundary pixel, some kernel elements go outside the image boundary and do not have any corresponding pixels to
         multiply. Therefore we need to add dummy rows and columns on each side of the image. A simple way is to add
@@ -43,48 +39,48 @@
         zero-padding to the test image.
         <br><br>
 
-        Exercise 2: Zero Padding (Marked)<br>
+        <b>Exercise 2: Zero Padding (Marked)</b><br>
         Generalize the zero-padding implementation in Ex1 for an image of size N x M and a kernel of size n x m. Assume
         that n and m are odd. Test your implementation for N=6, M=7, n=3, m=5.
         <br><br>
 
-        Exercise 3: Image Filtering (Bonus marks)<br>
+        <b> Exercise 3: Image Filtering (Bonus marks)</b><br>
         Write a program to perform spatial filtering of a N x M image with a n x m kernel (see Section 3.4 regarding
         implementation). Show an example to test your implementation using N=M=7 and n=m=3;
         <br><br>
 
-        Exercise 4: Image Filtering (Practice)<br>
+        <b>Exercise 4: Image Filtering (Practice)</b><br>
         Use the built-in imfilter command to do the operation in Ex.3. Compare the results of both.
         <br><br>
 
-        Exercise 5: Smoothing using box filter (Marked)<br>
+        <b>Exercise 5: Smoothing using box filter (Marked)</b><br>
         Filter the cameraman.tif image using 3x3 and 7x7 box kernels. Compare the result side-by-side with the original.
         Note that a box filter consists of all ones.
         <br><br>
 
-        Exercise 6: Smoothing using Gaussian filter (Practice)<br>
+        <b> Exercise 6: Smoothing using Gaussian filter (Practice)</b><br>
         Repeat Ex5 using Gaussian filter.
         <br><br>
 
-        Exercise 7: Image Sharpening using the second derivative, i.e., Laplacian (Practice)<br>
+        <b> Exercise 7: Image Sharpening using the second derivative, i.e., Laplacian (Practice)</b><br>
         Apply Laplacian filtering on Fig3.38(a) to get the second derivative of the image. Multiply the second
         derivative with a constant k (take k=10) and add the original image to obtain a sharp image. You can see details
         of this technique in the course slides.
         <br><br>
 
-        Exercise 8: Image Sharpening using unsharp masking (Marked)<br>
+        <b> Exercise 8: Image Sharpening using unsharp masking (Marked)</b><br>
         Apply unsharp masking on Fig3.43(a). Steps: Apply Gaussian blurring. Subtract from the original image to get the
         highpass image (called the unsharp mask). Enhance the mask by multiplying with a constant k and add to the
         original image. Use 31x31 Gaussian kernel with sigma=5. Use k=1,2,3, and show the results side-by-side with the
         original image. You can see details of this technique in the course slides.
         <br><br>
 
-        Exercise 9: Edge detection (Marked)<br>
+        <b> Exercise 9: Edge detection (Marked)</b><br>
         One of the commonly used techniques for edge detection is by using the Sobel kernel. Apply this technique to
         detect the edges in Fig.3.42(a).
         <br><br>
 
-        Exercise 10: Median Filtering (Marked)<br>
+        <b> Exercise 10: Median Filtering (Marked)</b><br>
         Linear filtering done in the exercises above uses the image's convolution with a kernel, and is the most widely
         used filtering technique. However, sometimes we need to do non-linear filtering. Median filtering is the most
         common in this category. Apply a 5x5 median filter on Fig.3.35(a) to remove noise.

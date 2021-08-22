@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <title>Image Processing Labs</title>
+    <link rel="stylesheet" href="../../myCSS.css">
+</head>
+
+<button> <a href="intro.html"> Introduction </a></button>
+<button> <a href="lab1.html"> Lab1 </a></button>
+<button> <a href="lab2.html"> Lab2 </a></button>
+<button> <a href="lab3.html"> Lab3 </a></button>
+<button> <a href="lab4.html"> Lab4 </a></button>
+<button> <a href="lab5.html"> Lab5 </a></button>
+<button> <a href="lab6.html"> Lab6 </a></button>
+<button> <a href="lab7.html"> Lab7 </a></button>
+<button> <a href="lab8.html"> Lab8 </a></button>
+
+<body>
+
+    <Title>Image Processing Lab Excercises</Title>
+    <h1> Image Processing Lab5: Intensity Transformations</h1>
+
+    <ul>
+        <li>Combining multiple spatial enhancement techniques</li>
+    </ul>
+
+    <p>
+       <b>Exercise 1: Combining Spatial Enhancement Methods </b><br>
+        In many cases, one transformation may not be sufficient to enhance an image. In such situations, depending on
+        the nature of the original image, multiple techniques can be combined for enhancement. We will practice one such
+        example in this lab.<br><br>
+
+        In the previous lab, we learned how to enhance an image using a Laplacian filter. However, Laplacian (the second
+        derivative) can produce high noise in smooth regions, which can induce noise in the enhanced image. We will see
+        an example of this and find a solution in this lab.<br><br>
+
+        Gradient (the first derivative) only enhances the edges in the image and produces less noise in the background.
+        In other words, a gradient image will have high values on edges but (nearly) zero values in the background.
+        Therefore, if we multiply the Laplacian image with the gradient image, we can remove (or reduce) the noise in
+        the Laplacian image. However, before multiplying, it might be good to smooth the gradient with a lowpass filter.
+        This improved Laplacian obtained this way can be used to enhance the image. In this exercise, we will implement
+        this algorithm.<br><br>
+
+        Do the following steps:<br><br>
+
+        a) Read Fig.3.43(a). <br><br>
+        b) Enhance the image using the Laplacian filter using the following formula, as studied in the class and the
+        previous lab: B = A + k * Laplacian(A). Show the original and the enhanced image side-by-side.<br><br>
+        c) You can see noise in the enhanced image caused by the Laplacian. Improve the Laplacian by multiplying
+        with gradient and do the enhancement again. Show old and new results side-by-side.<br> <br>
+        d) Further improve the Laplacian by multiplying with a lowpass version of the gradient. You can use a 5x5
+        box kernel for lowpass filtering. Use the improved Laplacian for enhancement of the image and compare it with
+        the previous results.<br><br>
+        e) Further enhance the 3 enhanced versions above in (d) using Gamma correction with a suitable value of
+        gamma. Compare results with the original image. For display, stretch the intensities of each image to [0, 255]
+        range.
+
+
+        <br><br>
+
+        <b>Exercise 2 (Optional)(Bonus)</b><br>
+        Use some other combination of image enhancing techniques you learned in this course on Fig.3.43(a). Explain the rationale of your choices.
+        <br><br>
+
+       
+    </p>
+
+</body>
+
+</html>

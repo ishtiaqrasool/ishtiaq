@@ -1,0 +1,172 @@
+<html>
+
+<head>
+    <title>PhD Summary</title>
+    <link rel="stylesheet" href="..\myCSS.css">
+</head>
+
+<button> <a href="PhD_esummary.html" download>PhD Summary</a></button>
+<button> <a href="PhD.exe" target="main">FIR Filter Design Tool based on PhD Research</a></button>
+<button> <a href="MS_esummary.html">MS Summary</a></button>
+<button> <a href="MS_jsummary.html">MS Summary (Japanese)</a></button>
+
+<br>
+
+<body>
+
+    <h1>Taylor series based designs of linear phase non-recursice
+        FIR digital filters</h1>
+
+    <p>
+        With the invention of digital computer and emergence of Shannon sampling theorem to
+        reconstruct continuous signals from their discrete time samples, digital signals are
+        generally preferred over analog signals. The major advantages of digital signals over
+        analog signals include better storage (floppies, hard disks, CDs etc), duplication
+        without degradation and the ease of transmission from one place to other
+        (like wireless communication and transmission of data through Internet etc).
+        Due to these factors, digital signals have replaced analog signals in most of the daily
+        life applications (like telephony) and are expected to replace in the others
+        (like televisions) in the near future. This makes the digital signal processing one of
+        the most active research fields among all the engineering disciplines.
+        Some of the advantages, which digital systems offer over their analog counterparts are high accuracy and
+        reliability,
+        smaller size, uncritical component tolerances, no influence of component drifts and spurious environmental
+        signals and the
+        ease with which circuit parameters can be changed. <br><br>
+
+        Digital filtering, an important tool in digital signal processing (DSP), is in general a process to amplify,
+        attenuate,
+        isolate or manipulate certain components in the spectrum of a signal according to some desired specifications.
+        The uses of
+        the digital filters are multifold, e.g., noise removal, separation of mixed signals, demodulation and band
+        limiting etc.
+        Various designs of digital filters are available in literature, ranging from the simple (but inaccurate) windows
+        based
+        designs to the most sophisticated Chebyshev designs. In general, the main criterion to evaluate the performance
+        of digital
+        filters is the accuracy, with which its frequency response meets the desired specifications. However in real
+        time
+        applications, the more emphasis is placed on the efficiency, which includes the processing time and the required
+        storage.
+        Unfortunately most of the present designs, somehow, do not meet both of these criteria simultaneously. My Ph.D.
+        research
+        is about to develop some new designs of digital filters, which are more accurate than the available ones and are
+        efficient
+        enough to be used in real time systems. First chapter of my Ph.D. thesis collects some basic concepts of
+        filtering and
+        briefly describes some of the available design techniques. <br><br>
+
+        A classical example of digital filtering is numerical differentiation, which uses the equally spaced samples of
+        the input
+        signal to evaluate the rate of its change. Numerical differentiation is performed using finite difference
+        approximations
+        of the derivatives based on Taylor series. However these approximations could never be implemented as digital
+        differentiators (DDs) because their derivation involved the solution of a large number of linear equations equal
+        to their
+        orders, and no closed form relations were available to obtain their coefficients. Furthermore, no iterative
+        procedures were
+        available to derive an approximation of higher order from that of a lower order, and this made it quite
+        cumbersome to
+        obtain the approximations of higher orders. We successfully develop the closed form expressions for forward,
+        backward and
+        central difference approximations of arbitrary orders in Chapter 2, giving their coefficients with explicit
+        formulas. These
+        formulas can not only be implemented as DDs of arbitrary orders, but also remove the need of alternate numerical
+        differentiation techniques, like interpolating polynomials, operators and lozenge diagrams.<br><br>
+
+        Implementing these formulas as DDs, as described in details in Chapter 3, gives much interesting information
+        including that
+        only central difference approximations can give stable type III DDs of any order, and DDs given by forward and
+        backward
+        difference approximations get unstable for higher orders. Moreover it is also observed that only central
+        difference
+        approximations based DDs have linear phase. An interesting feature observed is that these DDs based on central
+        difference
+        approximations are exactly the same as maximally linear DDs, although previously the formulas for the
+        tap-coefficients of
+        maximally linear DDs had been derived in an entirely different context. It is well-known that maximally linear
+        type III DDs
+        are not good in the higher frequency band and can be used only in lower band applications. We suggest a
+        modification in
+        their design to considerably extend their working frequency band.<br><br>
+
+        This important relation between maximally linear DDs and the Taylor series gives us the idea that the Taylor
+        series may be
+        used in some other manner to derive some different approximations of derivatives, which can be implemented as
+        more accurate
+        and efficient DDs. Working on this possibility, we develop new finite difference approximations presented in
+        Chapter 4,
+        which are more accurate than the well-known ones, especially for periodic and oscillating functions having some
+        components
+        closer to the Nyquist frequency. These approximations are implemented as type IV maximally linear DDs, which
+        prove much
+        closer to the ideal, compared to type III DDs, especially in the higher frequency band. However, in a small band
+        very close
+        to the Nyquist frequency, these DDs also have relatively larger deviation from ideal, compared to the rest of
+        the frequency
+        band. We propose a modification in their design, which considerably narrows this error band.<br><br>
+
+        In Chapter 5, we present designs of higher degree DDs, which are often needed for data analysis, but compared to
+        first
+        degree DDs, only a few articles can be found in literature dealing with their efficient designs. Generally an
+        inefficient
+        way of cascading multiple first degree DDs is used to form a higher degree DD. We use the powerful Taylor series
+        to extend
+        the first degree central difference and new approximations presented in Chapter 4 to higher degrees, and present
+        explicit
+        formulas for their coefficients. These formulas can be implemented as highly accurate and efficient DDs of
+        arbitrary order
+        and degree.<br><br>
+
+        Certain relationships are available in the literature among various types of filters, which can be used to
+        derive the
+        design of one filter from another in a very simple way. Therefore if the explicit formulas for the
+        tap-coefficients of a
+        filter are known, those for many other different types of filters can be obtained in a straightforward way.
+        However this
+        could not be applied for maximally flat (MAXFLAT) filters, because most of the MAXFLAT designs were based on
+        deriving the
+        closed form expressions for frequency response and not tap-coefficients. Type III maximally linear DDs had
+        explicit
+        formulas for their tap-coefficients but could not be used due to their limited use for low band applications
+        only. However
+        our type IV DDs presented in Chapter 4 are fullband filters and we use the available and some new developed
+        relationships
+        and techniques to derive the design formulas of low/high pass and mid pass/stop filters in Chapter 6. <br><br>
+
+        We continue further in Chapter 7 by deriving explicit formulas for the tap-coefficients of one band (all pass)
+        filters,
+        type III Hilbert transformers, type IV Hilbert transformers and differentiating Hilbert transformers. Moreover
+        techniques
+        are given to design band pass/stop filters and multiband filters having different magnitude characteristics in
+        each
+        band. <br><br>
+
+        The MAXFLAT filters given in Chapters 6 and 7 have very smooth frequency responses, and relatively wider
+        transition bands,
+        which can be narrowed down only by increasing their orders. In contrast, transition bands of optimal filters can
+        be
+        narrowed down for a fixed order of the filter at the expense of a larger ripple on their magnitude response.
+        This characteristic is very useful in practical applications for changing the transition bandwidths without
+        changing the
+        actual number of tap coefficients (multipliers) of the filter. We modify the presented MAXFLAT designs such that
+        they
+        also acquire the same property, and their transition bandwidth can be controlled with a design parameter. The
+        performance
+        of these modified filters is also comparable to that of optimal filters. However in terms of design complexity,
+        these
+        Taylor series based designs obtained with explicit formulas, are superior to optimal filters designed with
+        complex
+        iterative procedures.<br><br>
+
+        All the procedures and designs presented in the thesis can be easily implemented with computer algebra programs.
+        In the
+        appendices, we give their implementation in MATHEMATICA, the commands of which are written like mathematical
+        expressions
+        and are very easy to understand. All the designs are collected in multipurpose design software developed in
+        Visual C++,
+        which can design single and multi band filters of any type and arbitrary order.<br><br>
+    </p>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <title>Image Processing Labs</title>
+    <link rel="stylesheet" href="../../myCSS.css">
+</head>
+
+<button> <a href="intro.html"> Introduction </a></button>
+<button> <a href="lab1.html"> Lab1 </a></button>
+<button> <a href="lab2.html"> Lab2 </a></button>
+<button> <a href="lab3.html"> Lab3 </a></button>
+<button> <a href="lab4.html"> Lab4 </a></button>
+<button> <a href="lab5.html"> Lab5 </a></button>
+<button> <a href="lab6.html"> Lab6 </a></button>
+<button> <a href="lab7.html"> Lab7 </a></button>
+<button> <a href="lab8.html"> Lab8 </a></button>
+
+<body>
+
+    <Title>Image Processing Lab Excercises</Title>
+    <h1> Image Processing Lab7: Noise Models</h1>
+
+
+    <p>
+        <b> Exercise 1: Gaussian Noise Model (Practice)</b><br>
+        Generate Gaussian noise of 300x500 pixels, using mean u=127 and standard deviation sd=50. Display this noise
+        image and its histogram. Note that the Gaussian distribution is also called the Normal distribution.
+        <br><br>
+
+        <b>Exercise 2: Rayleigh Noise Model (Practice) </b><br>
+        Repeat Ex1 using noise following the Rayleigh Distribution. Note that Gaussian distribution had two parameters -
+        mean and standard distribution. For Rayleigh noise, MATLAB uses only one parameter, b. Use b=127 for this
+        problem. Also, note that MATLAB's build-in model is slightly different than what you studied in the class, which
+        used two parameters.
+        <br><br>
+
+        <b>Exercise 3: Erlang (Gamma) Noise Model (Practice) </b><br>
+        Repeat Ex1 using noise following the Gamma Distribution.
+        <br><br>
+
+        <b>Exercise 4: Exponential Noise Model (Practice) </b></b><br>
+        Repeat Ex1 using noise following the Exponential Distribution.
+        <br><br>
+
+        <b>Exercise 5: Uniform Noise Model (Practice)</b> <br>
+        Repeat Ex1 using noise following the Uniform Distribution.
+        <br><br>
+
+        <b>Exercise 6: Salt and pepper (Impulsive) Noise Model (Practice)</b> <br>
+        Repeat Ex1 using noise following the Salt and pepper model. (Note: A straightforward way to generate this noise
+        is to randomly set some pixels to 255 and some others to zero.)
+        <br><br>
+
+        <b>Exercise 7: Salt and pepper (Impulsive) Noise Model (Bonus) </b><br>
+        Repeat Ex6 using a different strategy to generate the Salt and pepper noise. Be innovative.
+        <br><br>
+
+        <b>Exercise 8. (Marked)</b><br>
+        Read the cameraman image. Add to it the Gaussian noise of mean u=10 and standard deviation sd=10.<br>
+        (a) Show the histograms of the original and the noisy images side-by-side. Can you identify the type of noise
+        from the histogram? Explain your answer.<br>
+        (b) Repeat the above for u=50 and sd=10 and answer the same question as in (a).<br>
+        (c) Repeat the above for u=10 and sd=50 and answer the same question as in (a).<br>
+
+        <br><br>
+
+        <b>Exercise 9. (Marked)</b>
+        Read the cameraman image. Add salt and pepper noise, each using a probability p=0.05.<br>
+        (a) Show the histograms of the original and the noisy images side-by-side. Can you identify the type of noise
+        from the histogram? Explain your answer.<br>
+        (b) Repeat the above for p=0.2 and explain the change you see in the noisy image and the histogram compared to
+        (a).<br>
+
+       
+
+    </p>
+
+</body>
+
+</html>
