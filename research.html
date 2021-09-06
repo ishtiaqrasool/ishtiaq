@@ -11,7 +11,82 @@
 <button> <a href=".\Research\MS_jsummary.html">MS Summary (Japanese)</a></button>
 
 <body>
-    <h1>Research experience (in chronological order)</h1>
+    <h1>Current Interests</h1>
+
+    <h2>Recent Works</h2>
+    <p><b>Backward Compatible HDR Encoding:</b> One challenge in the High Dynamic Range domain is to ensure backward
+        compatibility of HDR content such that they become displayable on the existing non-HDR TV sets as well. New HDR
+        standards like HDR10 cater for HDR displays only, and therefore the content producers have to release a separate
+        low dynamic range (LDR) version of each HDR movie for the older TV sets. In the past, some backward compatible
+        formats such as JPEG-XT were proposed, but they did not gain industry acceptance due to inefficient coding, both
+        in terms of compression and computation. I am working on a single format for both HDR and LDR displays. To
+        achieve real-time performance, I developed an inverse tone-mapping algorithm that works for all existing TMOs
+        and uses only a simple arithmetic operation. The new format leverages this inversion algorithm. The technique
+        has been implemented on GPU for real-time performance, which is under review in an IEEE Transaction. A student
+        is implementing it on FPGA.
+    </p>
+    <p><b>Generic HDR Tone-mapping Operator:</b> One solution for visualizing HDR content on LDR displays is to perform
+        tone-mapping in real-time. This can allow the release of only one version of HDR content. However, in the
+        presence of a plethora of different algorithms of varying complexity and content-dependent performance, it is
+        not an easy task for the display manufacturers to incorporate the tone-mapping algorithm in their hardware. I
+        have developed a generic algorithm such that any global tone-mapping algorithm can be implemented with the same
+        hardware, utilizing 256 multiplications. Only the multiplication coefficients need to change from one
+        tone-mapping algorithm to other. The TV manufacturers can add this simple implementation to their hardware, and
+        the content producers can include these 256 coefficients in their HDR content. This way, the same copy of the
+        content can be displayed on both HDR and LDR displays. For this research, all validation studies have been done.
+        A student is incorporating it in HEVC, HDR10, and Dolby Vision formats’ pipelines.
+    </p>
+    <p><b>HDR Video Tone-mapping:</b> While there are several HDR tone-mapping algorithms available in the literature, some
+        have high complexity, and others do not necessarily perform well for all types of content. In 2018, I published
+        a new algorithm in IEEE Transactions on Industrial Electronics, which outperforms the existing state-of-the-art
+        algorithms and works in real-time. One of my students simplified its operations and implemented it on FPGA.
+        Next, he is extending it for video. The major issues in applying tone-mapping independently to video frames are
+        flickering and temporal incoherence. This research is an attempt to addressing these issues in real-time.
+    </p>
+    <p><b>Tone-mapping adapted to outdoor viewing:</b> When our mobile phones are used outdoors in bright environments, the
+        images on their screen do not look sharp enough. The idea behind this work is to use the human visual system’s
+        response to environmental conditions and modify the tone-mapping curve to produce sharp images for different
+        viewing conditions.
+    </p>
+    <p><b>Metaheuristics for image tone-mapping:</b> Recently, several quantitative metrics have been developed to measure the
+        quality of tone-mapped images. Metaheuristics-based differential evolution algorithm can iteratively refine the
+        tone-mapped images using these metrics as the fitness functions. I have obtained some promising results using
+        this approach in this currently ongoing work.
+    </p>
+    <p><b>A new image quality metric:</b> The existing quality metrics are not suitable for all types of HDR content. I have
+        produced several examples where a very high score is given by the metric to a visually distorted image. In this
+        research, the reasons behind the shortcomings of the existing metrics are investigated. A new metric is
+        proposed, which has a very high correlation with the scores given by the human subjects to the images to
+        describe their quality.
+    </p>
+    <p><b>Big Data Clustering:</b> K-means and its variants are slow on big data. Moreover, they are sensitive to the initial
+        solution and have the tendency to converge to a locally optimal solution. These issues are addressed in the
+        proposed clustering algorithm, which can cluster 10 million samples to 1000 clusters in a few minutes – a task
+        that the traditional k-means algorithm and its variants would take weeks to complete. The proposed algorithm is
+        particularly useful on the image data and is the basis of several enhancement techniques I am currently working
+        on.
+    </p>
+    <p><b>Medical Image Enhancement:</b> Medical images, including CT scans and MRI, capture HDR data, but they generally look
+        dark on standard display screens. Existing tone-mapping techniques focus on keeping the naturalness of the
+        scene; however, preserving the structure is more important for the medical images. This research focuses on
+        contrast enhancement of the medical images while preserving their structure. Based on feedback from the medical
+        practitioners, the produced images are visually better and are helpful in diagnosis.
+    </p>
+    <p><b>Mobile License Plate Recognition:</b> The existing license plate recognition systems used for access control and law
+        enforcement use fixed cameras. This research focuses on plate recognition in a live video captured by a mobile
+        device mounted on a vehicle. A deep neural network is used to detect the plate and recognize the alphanumeric
+        characters. Compared to some existing commercial applications, the accuracy of the developed system is
+        significantly high.
+    </p>
+    <p><b>8K Video:</b> Another exciting area I have just started exploring is the 8K video. There are exciting opportunities
+        in this field in streaming, encoding, and backward compatibility.
+    </p>
+    <p><b>Machine learning for medical diagnostics:</b> Medical data (ECG/EEG signals or medical images) can be used for early
+        diagnosis of disease. The signals/images from a patient’s organs have less structural complexity. In this
+        research, a new complexity feature is proposed, which can be used in several machine learning-based scenarios
+        for a diagnosis with nearly 100% accuracy.
+    </p>
+
     <h2>Past Works</h2>
     <p><b>Robotics:</b> This was my first work when I started my career as an Assistant Engineer after completing my MS.
         I designed some modules for mobile robots, including collision avoidance and path planning algorithms
@@ -109,81 +184,7 @@
         efficient approach is developed, which can be used in real-time. It can potentially be implemented on the camera
         hardware for real-time ghost-free HDR capturing.
     </p>
-
-    <h2>Recent Works</h2>
-    <p><b>Backward Compatible HDR Encoding:</b> One challenge in the High Dynamic Range domain is to ensure backward
-        compatibility of HDR content such that they become displayable on the existing non-HDR TV sets as well. New HDR
-        standards like HDR10 cater for HDR displays only, and therefore the content producers have to release a separate
-        low dynamic range (LDR) version of each HDR movie for the older TV sets. In the past, some backward compatible
-        formats such as JPEG-XT were proposed, but they did not gain industry acceptance due to inefficient coding, both
-        in terms of compression and computation. I am working on a single format for both HDR and LDR displays. To
-        achieve real-time performance, I developed an inverse tone-mapping algorithm that works for all existing TMOs
-        and uses only a simple arithmetic operation. The new format leverages this inversion algorithm. The technique
-        has been implemented on GPU for real-time performance, which is under review in an IEEE Transaction. A student
-        is implementing it on FPGA.
-    </p>
-    <p><b>Generic HDR Tone-mapping Operator:</b> One solution for visualizing HDR content on LDR displays is to perform
-        tone-mapping in real-time. This can allow the release of only one version of HDR content. However, in the
-        presence of a plethora of different algorithms of varying complexity and content-dependent performance, it is
-        not an easy task for the display manufacturers to incorporate the tone-mapping algorithm in their hardware. I
-        have developed a generic algorithm such that any global tone-mapping algorithm can be implemented with the same
-        hardware, utilizing 256 multiplications. Only the multiplication coefficients need to change from one
-        tone-mapping algorithm to other. The TV manufacturers can add this simple implementation to their hardware, and
-        the content producers can include these 256 coefficients in their HDR content. This way, the same copy of the
-        content can be displayed on both HDR and LDR displays. For this research, all validation studies have been done.
-        A student is incorporating it in HEVC, HDR10, and Dolby Vision formats’ pipelines.
-    </p>
-    <p><b>HDR Video Tone-mapping:</b> While there are several HDR tone-mapping algorithms available in the literature, some
-        have high complexity, and others do not necessarily perform well for all types of content. In 2018, I published
-        a new algorithm in IEEE Transactions on Industrial Electronics, which outperforms the existing state-of-the-art
-        algorithms and works in real-time. One of my students simplified its operations and implemented it on FPGA.
-        Next, he is extending it for video. The major issues in applying tone-mapping independently to video frames are
-        flickering and temporal incoherence. This research is an attempt to addressing these issues in real-time.
-    </p>
-    <p><b>Tone-mapping adapted to outdoor viewing:</b> When our mobile phones are used outdoors in bright environments, the
-        images on their screen do not look sharp enough. The idea behind this work is to use the human visual system’s
-        response to environmental conditions and modify the tone-mapping curve to produce sharp images for different
-        viewing conditions.
-    </p>
-    <p><b>Metaheuristics for image tone-mapping:</b> Recently, several quantitative metrics have been developed to measure the
-        quality of tone-mapped images. Metaheuristics-based differential evolution algorithm can iteratively refine the
-        tone-mapped images using these metrics as the fitness functions. I have obtained some promising results using
-        this approach in this currently ongoing work.
-    </p>
-    <p><b>A new image quality metric:</b> The existing quality metrics are not suitable for all types of HDR content. I have
-        produced several examples where a very high score is given by the metric to a visually distorted image. In this
-        research, the reasons behind the shortcomings of the existing metrics are investigated. A new metric is
-        proposed, which has a very high correlation with the scores given by the human subjects to the images to
-        describe their quality.
-    </p>
-    <p><b>Big Data Clustering:</b> K-means and its variants are slow on big data. Moreover, they are sensitive to the initial
-        solution and have the tendency to converge to a locally optimal solution. These issues are addressed in the
-        proposed clustering algorithm, which can cluster 10 million samples to 1000 clusters in a few minutes – a task
-        that the traditional k-means algorithm and its variants would take weeks to complete. The proposed algorithm is
-        particularly useful on the image data and is the basis of several enhancement techniques I am currently working
-        on.
-    </p>
-    <p><b>Medical Image Enhancement:</b> Medical images, including CT scans and MRI, capture HDR data, but they generally look
-        dark on standard display screens. Existing tone-mapping techniques focus on keeping the naturalness of the
-        scene; however, preserving the structure is more important for the medical images. This research focuses on
-        contrast enhancement of the medical images while preserving their structure. Based on feedback from the medical
-        practitioners, the produced images are visually better and are helpful in diagnosis.
-    </p>
-    <p><b>Mobile License Plate Recognition:</b> The existing license plate recognition systems used for access control and law
-        enforcement use fixed cameras. This research focuses on plate recognition in a live video captured by a mobile
-        device mounted on a vehicle. A deep neural network is used to detect the plate and recognize the alphanumeric
-        characters. Compared to some existing commercial applications, the accuracy of the developed system is
-        significantly high.
-    </p>
-    <p><b>8K Video:</b> Another exciting area I have just started exploring is the 8K video. There are exciting opportunities
-        in this field in streaming, encoding, and backward compatibility.
-    </p>
-    <p><b>Machine learning for medical diagnostics:</b> Medical data (ECG/EEG signals or medical images) can be used for early
-        diagnosis of disease. The signals/images from a patient’s organs have less structural complexity. In this
-        research, a new complexity feature is proposed, which can be used in several machine learning-based scenarios
-        for a diagnosis with nearly 100% accuracy.
-    </p>
-
+   
 </body>
 
 </html>
