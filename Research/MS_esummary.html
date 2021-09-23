@@ -16,69 +16,28 @@
 
         <h1>Acoustic diagnosis of defects in circular pipes</h1><br>
 
-        My present research is to devise a method based on the acoustic signal
-        processing for the detection and location of small defects in a long circular pipe. The defects in the pipes are
-        usually formed due to corrosion and the forehand information about their formation may prevent the major
-        accidents in the industry. I have carried out some experiments in the lab which have given much satisfactory
-        results, and based on these results I have already sent a manuscript for the publication in an international
-        journal. I will also present some results in a conference in Hokkaido University in February 1998. The summary
-        of the basic idea of detection method and some of the results are given below.
+        Forehand information of the formation of defects in the pipes (for example, due to corrosion) may prevent major accidents in the industry. In this research, I developed a prototype that can perform this task satisfactorily without requiring the industry to shut down for inspection.
 
         <br><br>
-        <h2>The basic idea for detection:</h2><br>
+        <h2>The System:</h2><br>
 
-        A Maximum length linear feedback shift register sequence (M-sequence) is transmitted at an end of a defective
-        pipe. A receiver placed at the same end of the pipe will receive the actual sequence and some replica of the
-        sequences reflected back from the far end as well as the defects, if they exist, in the pipe. As the auto
-        correlation function (ACR) of the M-sequence is a quasi impulse, the cross correlation function (CCF) of
-        received and the transmitted sequences will give pulses corresponding to the direct pulse and each replica of
-        the M-sequence. The distance of a reflection pulse from the main pulse gives the distance of the reflecting
-        object from the end of the pipe.<br><br>
-        The noise will have no effect if it is uncorrelated with the sequence.
-        However certain kind of noise, mainly due to the reflections from the surrounding objects and the limitations of
-        the measuring system, make it difficult to distinguish between the pulses due to the reflections from the
-        defects (wanted pulses) and the pulses due to noise (unwanted pulses). Certain noise reduction techniques are
-        applied to reduce the noise and identify the wanted peaks from the unwanted peaks.
+        A Maximum length linear feedback shift register sequence (M-sequence) is transmitted at one end of the pipe. A receiver placed at the same end receives the actual sequence along with its replicas reflected from the far end and defects if they exist in the pipe. As the M-sequence’s autocorrelation function (ACR) is a quasi-impulse, the cross-correlation function (CCF) of received and the transmitted sequences will give pulses corresponding to the direct pulse and each reflection of the M-sequence. The distance of each pulse from the strongest direct pulse will give the distance of the object that reflected it. The noise will have no effect if it is uncorrelated with the sequence. However, certain kinds of noise, mainly due to the reflections from the surrounding objects and the limitations of the measuring system, make it difficult to distinguish between the pulses due to the reflections from the defects (wanted pulses) and the pulses due to noise (unwanted pulses). 
 
         <br><br>
         <h2>S/N Improvement:</h2><br>
 
-        It is proved to be useful to take data using a pipe having no defect and the identical dimensions as those of
-        the defective pipe, and subtract it from the data taken with defective pipe before applying other noise
-        reduction techniques. Another useful technique is taking the moving average of the data. It makes the data
-        smoother by taking the weighted average of the neighboring data points, and tends to remove the noise pulses of
-        small width. Inverse filtering is another technique based on linear prediction, which can be used to remove
-        certain kind of noise from the signal. Levinson's recursion is an efficient algorithm for constructing a filter
-        based on AR model. The filter constructed from a part of the CCF, which does not contain any reflections from
-        the defects, and comprises only of the noise removes the predictable type of noise like the sinusoidal ripple
-        etc.<br><br>
-        In addition to the noise reduction techniques described above, a new
-        coincidence enhancement technique is devised which will remove all kinds of unwanted pulses on the CCF, and
-        enhance the wanted pulses. At first the data is taken by placing the transmitter and receiver at one end of the
-        pipe and its CCF is calculated. Then data is taken from the other end of the pipe and its CCF is calculated.
-        This data is reversed, i.e., the ith point is interchanged with (n-i)th point. In this way the wanted peaks will
-        be at the same location on the two CCF's, and the unwanted peaks will be at different locations. Now if the two
-        CCF's are multiplied, every wanted peak will be enhanced by multiplying with itself, and the unwanted peaks will
-        be removed by multiplying with the minimum of the CCF, which must have a value equal to zero ideally.
-
+        The first step is to subtract the signal obtained for a pipe having no defect from the signal received for the defective pipe before applying other noise reduction techniques. Next, we calculate the moving average of the signal by taking the weighted sum of the neighboring points to remove the noise pulses of small width. This is followed by applying the inverse filtering technique based on linear prediction. Levinson’s recursion is an efficient algorithm for constructing a filter based on an auto-regression model. The filter constructed from a part of CCF, which does not contain any reflections from the defects and comprises only the noise, is used to remove the predictable noise like the sinusoidal ripple.
         <br><br>
+        In addition, a new technique referred to as “coincidence enhancement” is devised, which suppresses all unwanted pulses on the CCF and enhances the pulses caused by defects. At first, the data is taken by placing the transmitter and receiver at one end of the pipe and its CCF is calculated. Then data is taken from the other end of the pipe, and its CCF is calculated. This second data is reversed in the spatial domain, i.e., the ith point is swapped with (n-i)th point. In this way, the wanted peaks get at the same location on the two CCFs, but the unwanted peaks remain at different locations. Now, if the two CCFs are multiplied, every wanted peak will be enhanced by multiplying with itself, and the unwanted peaks will be removed by multiplying with zero.
+        <br><br>
+
         <h2>The Experiments:</h2><br>
 
-        For all the experiments, the M-sequence generated by 11 bit shift register is transmitted at a frequency of 20
-        kHz, and the received signal is sampled at a frequency of 80 kHz using a PC with the supervisory routine written
-        in C++.
-        An experiment was done on a 2 m long pipe having an inner diameter of
-        2 cm and outer diameter of 1 inch, and having 3 holes in it, a 1 mm hole at 9.5 cm, a 1.3 mm hole at 97 cm, and
-        a 1.5 mm hole at 135 cm from the transmitting end. All the holes were easily detectable and the size of the
-        pulses on the CCF gave the information of the size of the holes as well. A 2nd experiment was done on a pipe of
-        length 77 cm, and having about 11 defects in it of different shapes and sizes. Some of the defects were very
-        close to each other. It was observed that the defects which are about 5 cm apart can be distinguished from each
-        other. A 3rd experiment done on a 4 m pipe showed that a very small hole of the order of 1 mm is detectable
-        anywhere in this pipe.<br>
+        For all experiments, the M-sequence generated by 11-bit shift register was transmitted at 20 kHz frequency, and the received signal was sampled at 80 kHz frequency. A code written in C was used to interface with the transmitter and the receiver. 
+        <br><br>
+        The first experiment was done on a 2 m long pipe having an inner diameter of 2 cm, outer diameter of 1 inch, and three holes in the wall – a 1 mm hole at 9.5 cm, a 1.3 mm hole at 97 cm, and a 1.5 mm hole at 135 cm from the transmitting end. All the holes were easily detectable, and the size of pulses on CCF gave information on the holes’ size. A 2nd experiment was done on a pipe of 77 cm length, provided by our industry partner, having about 11 defects of different shapes and sizes. Some of the defects were very close to each other. It was observed that the defects about 5 cm apart could be distinguished from each other using our algorithm. A 3rd experiment done on a 4 m pipe showed that a tiny hole of the order of 1 mm is detectable anywhere in this pipe.
 
         <br><br>
         <h2>Conclusion:</h2><br>
 
-        The method can be applied to detect the holes of the order 1 mm anywhere in a 4 m long pipe, and can distinguish
-        between the two defects if they are more than 5 cm apart from each other. The method is not applied yet on more
-        longer pipes.
+        The method can be applied to detect the holes of the order 1 mm anywhere in a 4 m long pipe and can distinguish between the two defects if they are more than 5 cm apart from each other. 
